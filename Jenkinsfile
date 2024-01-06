@@ -25,7 +25,7 @@ pipeline {
 
     post {
         success {
-            echo 'La construcción y las pruebas han sido exitosas.'
+            echo 'La construc y las pruebas han sido exitosas.'
         }
         failure {
             echo 'La construcción o las pruebas han fallado. Verifica los detalles.'
