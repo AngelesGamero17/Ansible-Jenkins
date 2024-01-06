@@ -1,11 +1,34 @@
 pipeline {
     agent any
+
     stages {
-        stage("Ejecutar el playbox") {
+        stage('Checkout') {
             steps {
-                script {
-                    ansiblePlaybook installation: 'Ansible-prueba', inventory: '/home/angeles/kafka/hosts.yaml', playbook: '/home/angeles/kafka/test2.yaml', vaultTmpPath: ''
+                git 'https://github.com/AngelesGamero17/Ansible-Jenkins.git'
             }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Construyendo el proyecto...'
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Ejecutando pruebas...'
+                sh 'mvn test'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'La construcción y las pruebas han sido exitosas.'
+        }
+        failure {
+            echo 'La construcción o las pruebas han fallado. Verifica los detalles.'
         }
     }
 }
