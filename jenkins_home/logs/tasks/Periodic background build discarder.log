@@ -1,0 +1,18 @@
+Started at Fri Jan 05 19:23:56 UTC 2024
+Processing primer_job
+Offering primer_job to Project Build Discarder
+Finished at Fri Jan 05 19:23:56 UTC 2024. 1ms
+Started at Fri Jan 05 20:23:56 UTC 2024
+Processing jenkins-ansible-prueba
+Offering jenkins-ansible-prueba to Project Build Discarder
+Processing primer_job
+Offering primer_job to Project Build Discarder
+Finished at Fri Jan 05 20:23:56 UTC 2024. 7ms
+Started at Fri Jan 05 21:23:56 UTC 2024
+Processing jenkins-ansible-prueba
+Offering jenkins-ansible-prueba to Project Build Discarder
+Processing jenkins-ansible-prueba2
+Offering jenkins-ansible-prueba2 to Project Build Discarder
+Processing primer_job
+Offering primer_job to Project Build Discarder
+Finished at Fri Jan 05 21:23:56 UTC 2024. 1ms

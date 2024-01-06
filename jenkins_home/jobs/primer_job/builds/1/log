@@ -1,0 +1,7 @@
+Started by user [8mha:////4OewwzierfKmyVLLrHnwQwdo2ZFE7jpKZ+mh+d+TA2M+AAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CJ9oBGpOanFAJ0cEgPCAAAA[0mangeles
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/primer_job
+[primer_job] $ /bin/sh -xe /tmp/jenkins14452203888459379487.sh
++ echo Bienvenidos a jenkins
+Bienvenidos a jenkins
+Finished: SUCCESS
