@@ -1,0 +1,7 @@
+    - name: Instalar el servidor web
+      apt:
+        name: apache2
+        state: present
+        tags:
+          - Actualizar_paquetes
+

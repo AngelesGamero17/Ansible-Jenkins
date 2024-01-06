@@ -1,0 +1,72 @@
+    - name: Actualizar lista de paquetes
+      apt:
+        update_cache: yes
+        tags:
+        - Actualizar_paquetes
+
+    - name: Instalar pip para Python 3
+      apt:
+        name: python3-pip
+        state: present
+        tags:
+        - Instalar_pip
+
+    - name: Instalar PyMySQL para Python 3
+      ansible.builtin.pip:
+        name: pymysql
+        state: present
+        tags:
+        - Instalar_PyMySQL
+    
+    - name: Instalar MySQL Server
+      ansible.builtin.package:
+        name: mysql-server
+        state: present
+        tags:
+        - Instalar_myql-server
+
+    - name: Iniciar y habilitar servicio MySQL
+      ansible.builtin.service:
+        name: mysql
+        state: started
+        enabled: yes
+
+
+    - name: Configurar contraseña del usuario root en MySQL
+      ansible.builtin.mysql_user:
+        name: root
+        password: "angeles"
+        login_user: root
+        login_password: "angeles"
+
+    - name: Arrancar el servicio MySQL
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Crear nueva base de datos
+      mysql_db:
+        name: "{{ new_db_name }}"
+        state: present
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+
+    - name: Crear nuevo usuario y otorgar privilegios
+      mysql_user:
+        name: "{{ new_db_user }}"
+        password: "{{ new_db_password }}"
+        priv: "{{ new_db_name }}.*:ALL"
+        host: localhost
+        state: present
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+
+
+    - name: Instalar el servidor web
+      apt:
+        name: apache2
+        state: present
+        tags:
+          - Instalar_myql-server
+

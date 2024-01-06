@@ -1,0 +1,17 @@
+---
+- name: "crear usuario"
+  hosts: prueba
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks: 
+    - name: "llamar al rol abc"
+      include_role: 
+        name: abc
+      vars:
+        mysql_root_password: "angeles"
+        new_db_user: "angeles"
+        new_db_password: "angeles"
+        new_db_name: "usuarios"
+        ansible_become_pass: "angeles"
+

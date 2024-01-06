@@ -1,0 +1,17 @@
+- name: "Instalar paquetes"
+  apt: name={{ item }} state=latest
+  with_items:
+    - mysql-server
+  become: true
+
+- name: Crea usuario necesario
+  user:
+    name: "{{ item.nombre }}"
+    group: "{{ item.grupo }}"
+    state: present
+  become: true
+  with_items:
+    - { nombre: usuario1, grupo: www-data }
+    - { nombre: usuario2, grupo: www-data }
+
+

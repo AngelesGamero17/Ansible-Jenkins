@@ -1,0 +1,9 @@
+---
+- name: "crear "
+  hosts: node
+  become: true
+  tasks: 
+    - name: "llamar al rol dgf"
+      include_role: 
+        name: dfg
+

@@ -1,0 +1,9 @@
+---
+- name: Instalar paquetes
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apache2
+    - php
+  become: true
