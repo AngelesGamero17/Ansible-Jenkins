@@ -23,14 +23,13 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                echo 'Desplegando el proyecto...'
-                
-                // Llamar a Ansible para la implementación
-                sh 'ansible-playbook -i inventario.ini despliegue.yml'
-            }
-        }
+    steps {
+        echo 'Desplegando el proyecto...'
+
+        // Llamar a Ansible para la implementación
+        sh 'ansible-playbook -i hosts.yml test.yaml -u ansible'
     }
+}
 
     post {
         success {
