@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        groovy 'Jenkinsfile'
+    }
+
     parameters {
         string(name: 'ANSIBLE_USER', defaultValue: 'ansible', description: 'Usuario de Ansible')
         string(name: 'ANSIBLE_INVENTORY', defaultValue: 'hosts.yml', description: 'Inventario de Ansible')
@@ -32,14 +36,12 @@ pipeline {
             steps {
                 echo 'Desplegando el proyecto...'
 
-                // Agrega la ruta del ejecutable de Groovy al PATH
-                script {
-                    def groovyHome = tool 'Groovy'
-                    env.PATH = "${groovyHome}/bin:${env.PATH}"
-                }
-
                 // Llamar a Ansible para la implementación con parámetros
-                sh "ansible-playbook -i ${params.ANSIBLE_INVENTORY} ${params.ANSIBLE_PLAYBOOK} -u ${params.ANSIBLE_USER}"
+                script {
+                    def groovyHome = tool 'Jenkinsfile'
+                    sh "${groovyHome}/bin/groovy /var/lib/jenkins/workspace/jenkins-ansible-prueba4/Jenkinsfile"
+                    sh "ansible-playbook -i ${params.ANSIBLE_INVENTORY} ${params.ANSIBLE_PLAYBOOK} -u ${params.ANSIBLE_USER}"
+                }
             }
         }
     }
