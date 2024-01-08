@@ -21,9 +21,10 @@ pipeline {
             }
         }
 
+
         stage('Test') {
             steps {
-                echo 'Ejecutando pruebas...'
+                echo 'Ejecutando pruebas'
                 sh 'mvn test'
             }
         }
