@@ -1,25 +1,16 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
+        stage('Stage: Hola Mundo') {
             steps {
-                checkout scm
+                echo 'Paso 1. Hola Mundo'
             }
         }
-
-        stage('Ejecutar Script Groovy') {
+        stage('Stage: Segundo Stage') {
             steps {
-
-                echo "hola"
-
+                echo 'Paso 2: Hola Dos Veces'
+                echo 'Paso 3. Hola Tres Veces'
             }
-        }
-    }
-
-    post {
-        always {
-            // Puedes agregar pasos adicionales que siempre se ejecutarán, incluso si hay errores.
         }
     }
 }
