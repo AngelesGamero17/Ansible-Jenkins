@@ -1,12 +1,26 @@
 pipeline {
     agent any
 
-    environment {
-        JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
-        PATH = "$JAVA_HOME/bin:$PATH"
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Ejecutar Script Groovy') {
+            steps {
+                script {
+                    def scriptPath = "/var/jenkins_home/tus_scripts_groovy/tu_script.groovy"
+                    sh "groovy ${scriptPath}"
+                }
+            }
+        }
     }
 
-    stages {
-        // Tus etapas aquí
+    post {
+        always {
+            // Puedes agregar pasos adicionales que siempre se ejecutarán, incluso si hay errores.
+        }
     }
 }

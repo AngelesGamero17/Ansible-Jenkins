@@ -15,5 +15,12 @@ services:
     networks:
       - net
 
+
+  groovy-executor:
+    image: groovy
+    volumes:
+      - ./tus_scripts_groovy:/scripts
+    command: ["groovy", "/scripts/tu_script.groovy"]
+
 networks:
   net:
