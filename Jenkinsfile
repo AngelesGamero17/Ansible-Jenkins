@@ -10,10 +10,9 @@ pipeline {
 
         stage('Ejecutar Script Groovy') {
             steps {
-                script {
-                    def scriptPath = "/var/jenkins_home/tus_scripts_groovy/tu_script.groovy"
-                    sh "groovy ${scriptPath}"
-                }
+
+                echo "hola"
+
             }
         }
     }
