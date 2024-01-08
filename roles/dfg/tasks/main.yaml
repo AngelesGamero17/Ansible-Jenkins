@@ -2,6 +2,4 @@
       apt:
         name: apache2
         state: present
-        tags:
-          - Actualizar_paquetes
 
