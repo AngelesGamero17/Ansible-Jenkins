@@ -61,6 +61,4 @@
       apt:
         name: apache2
         state: present
-        tags:
-          - Instalar_myql-server
 
