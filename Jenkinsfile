@@ -37,7 +37,11 @@ pipeline {
                 echo 'Desplegando el proyecto...'
 
                 // Llamar a Ansible para la implementación con parámetros
-            
+                script {
+                    def groovyHome = tool 'Jenkinsfile'
+                    sh "${groovyHome}/bin/groovy /var/lib/jenkins/workspace/jenkins-ansible-prueba4/Jenkinsfile"
+                    sh "ansible-playbook -i ${params.ANSIBLE_INVENTORY} ${params.ANSIBLE_PLAYBOOK} -u ${params.ANSIBLE_USER}"
+                }
             }
         }
     }
