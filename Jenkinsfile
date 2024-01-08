@@ -21,7 +21,6 @@ pipeline {
             }
         }
 
-
         stage('Test') {
             steps {
                 echo 'Ejecutando pruebas'
@@ -32,6 +31,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando el proyecto...'
+
+                // Agrega la ruta del ejecutable de Groovy al PATH
+                script {
+                    def groovyHome = tool 'Groovy'
+                    env.PATH = "${groovyHome}/bin:${env.PATH}"
+                }
 
                 // Llamar a Ansible para la implementación con parámetros
                 sh "ansible-playbook -i ${params.ANSIBLE_INVENTORY} ${params.ANSIBLE_PLAYBOOK} -u ${params.ANSIBLE_USER}"
@@ -52,4 +57,3 @@ pipeline {
         }
     }
 }
-
