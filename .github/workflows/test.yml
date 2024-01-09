@@ -12,5 +12,15 @@ jobs:
         with:
           node-version: 18
 
-      - name: Ejecutar tareas con Ansible
-        run: ansible-playbook  -i  hosts.yml  test2.yaml -u ansible
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Mostrar contenido del directorio
+        run: ls
