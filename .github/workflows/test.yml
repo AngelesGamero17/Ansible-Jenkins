@@ -12,3 +12,5 @@ jobs:
         with:
           node-version: 18
 
+      - name: Ejecutar tareas con Ansible
+        run: ansible-playbook  -i  hosts.yml  test2.yaml -u ansible
