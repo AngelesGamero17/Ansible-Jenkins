@@ -1,0 +1,14 @@
+name: test project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        run: echo "Replace this line with your code-fetching or repository cloning commands"
