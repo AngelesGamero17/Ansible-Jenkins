@@ -1,14 +1,17 @@
 name: test project
 
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get code
-        run: echo "Replace this line with your code-fetching or repository cloning commands"
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependedncias
+        run : npm ci
+      - name: Run tests
+        run: npm test
