@@ -17,10 +17,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Install NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
       
       - name: Mostrar contenido del directorio
         run: ls
