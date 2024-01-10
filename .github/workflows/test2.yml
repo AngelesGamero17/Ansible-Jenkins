@@ -13,9 +13,9 @@ jobs:
     - name: Configurar AWS CLI
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ i-0524aac5bdd875959 }}
-        aws-secret-access-key: ${{ angeles }}
+        aws-access-key-id: ${{ AKIAQ7MWL5NQ6G4ZPOMT }}
+        aws-secret-access-key: ${{ 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 }}
         aws-region: us-east-2 
 
     - name: Ejecutar Máquina Virtual en AWS
-      run: aws ec2 run-instances --image-id ami-xxxxxxxxxxxx --instance-type t2.micro --key-name tu-key-name
+      run:  18.220.141.63 angeles
