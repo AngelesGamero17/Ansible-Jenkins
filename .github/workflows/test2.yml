@@ -11,4 +11,5 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Ejecutar Máquina Virtual en AWS
-      run: ssh -i /home/angeles/Descargas/coraima.pem prueba2@18.220.141.63
+      run: ssh -i /home/angeles/Descargas/coraima.pem -o IdentitiesOnly=yes -o StrictHostKeyChecking=no prueba2@18.220.141.63
+
