@@ -1,0 +1,21 @@
+name: Ejecutar Máquina Virtual en AWS
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    - name: Configurar AWS CLI
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ 0674-2421-7953 }}
+        aws-secret-access-key: ${{ angeles }}
+        aws-region: us-east-2 
+
+    - name: Ejecutar Máquina Virtual en AWS
+      run: aws ec2 run-instances --image-id ami-xxxxxxxxxxxx --instance-type t2.micro --key-name tu-key-name
