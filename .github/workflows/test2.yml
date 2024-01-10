@@ -10,13 +10,14 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Configurar AWS CLI
-      run: |
-        aws configure set aws_access_key_id ${{ secrets.CORAIMA_KEY }}
-        aws configure set aws_secret_access_key ${{ secrets.CORAIMA_KEY }}
-        aws configure set default.region us-east-1
+    - name: Install SSH client
+      run: sudo apt-get install -y openssh-client
 
-    - name: Desplegar en instancia de EC2
+    - name: Set up SSH
       run: |
-        # Agrega aquí los comandos o scripts para desplegar en tu instancia de EC2
-        # Puede ser algo como s
+        echo "${{ secrets.CORAIMA.KEY }}" > ~/.ssh/id_prsa
+        chmod 600 ~/.ssh/id_prsa
+        ssh-keyscan -t rsa 18.220.141.63 >> ~/.ssh/known_hosts
+
+    - name: Connect to AWS Instance
+      run: ssh -i ~/.ssh/id_prsa prueba2@18.220.141.63 "your-commands-here"
