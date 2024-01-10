@@ -12,8 +12,8 @@ jobs:
 
     - name: Configurar AWS CLI
       run: |
-        aws configure set aws_access_key_id ${{ secrets.AKIAQ7MWL5NQ6G4ZPOMT }}
-        aws configure set aws_secret_access_key ${{ secrets.4OWBcztOWP9otx9Qe0tiE7xAlNt+LLm1WHaWYNP8 }}
+        aws configure set aws_access_key_id ${{ secrets.CORAIMA_KEY }}
+        aws configure set aws_secret_access_key ${{ secrets.CORAIMA_KEY }}
         aws configure set default.region us-east-1
 
     - name: Desplegar en instancia de EC2
