@@ -10,12 +10,5 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Configurar AWS CLI
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: "AKIAQ7MWL5NQ6G4ZPOMT"
-        aws-secret-access-key: "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"
-        aws-region: us-east-2 
-
     - name: Ejecutar Máquina Virtual en AWS
-      run: 18.220.141.63 angeles
+      run: 18.220.141.63 angeles_gamero angeles
