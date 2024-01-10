@@ -11,5 +11,10 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Ejecutar Máquina Virtual en AWS
-      run: ssh -i ${{ secrets.CORAIMA_KEY}} prueba2@18.220.141.63
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.CORAIMA_KEY }}
+      run: |
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh -i ~/.ssh/id_rsa prueba2@18.220.141.63
 
