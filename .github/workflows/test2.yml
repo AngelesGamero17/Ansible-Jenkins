@@ -16,4 +16,4 @@ jobs:
         echo "${{ secrets.CORAIMA_KEY }}" 
 
     - name: Conectar y ejecutar comando en la Máquina Virtual
-      run: ssh -i  prueba2@18.220.141.63
+      run: ssh -i CORAIMA_KEY prueba2@18.220.141.63
