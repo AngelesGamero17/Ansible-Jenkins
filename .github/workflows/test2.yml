@@ -11,4 +11,4 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Ejecutar Máquina Virtual en AWS
-      run: ssh -i coraima.pem prueba1@3.140.238.73
+      run: ssh -i coraima.pem prueba2@18.220.141.63
