@@ -3,17 +3,20 @@ name: Ejecutar Máquina Virtual en AWS
 on: [push]
 
 jobs:
-  build:
+  env:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Configurar llave privada
+    - name: Configurar AWS CLI
       run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.CORAIMA_KEY }}" 
+        aws configure set aws_access_key_id ${{ secrets.AKIAQ7MWL5NQ6G4ZPOMT }}
+        aws configure set aws_secret_access_key ${{ secrets.4OWBcztOWP9otx9Qe0tiE7xAlNt+LLm1WHaWYNP8 }}
+        aws configure set default.region us-east-1
 
-    - name: Conectar y ejecutar comando en la Máquina Virtual
-      run: ssh -i CORAIMA_KEY prueba2@18.220.141.63
+    - name: Desplegar en instancia de EC2
+      run: |
+        # Agrega aquí los comandos o scripts para desplegar en tu instancia de EC2
+        # Puede ser algo como s
