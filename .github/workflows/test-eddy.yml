@@ -10,8 +10,8 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Configurar llave privada
-      run: echo "${{ secrets.CORAIMA_KEY }}" 
+    - name: Checkout Eddy
+      uses: actions/checkout@v4
 
-    - name: Conectar y ejecutar comando en la Máquina Virtual
-      run: ssh -i "${{ secrets.CORAIMA_KEY }}" ubuntu@18.220.141.63 "echo "Eddy"
+
+ 
