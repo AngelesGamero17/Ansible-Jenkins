@@ -13,7 +13,7 @@ jobs:
     - name: Configurar AWS CLI
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ 0674-2421-7953 }}
+        aws-access-key-id: ${{ i-0524aac5bdd875959 }}
         aws-secret-access-key: ${{ angeles }}
         aws-region: us-east-2 
 
