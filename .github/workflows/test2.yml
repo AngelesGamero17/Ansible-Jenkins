@@ -10,5 +10,8 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Ejecutar Máquina Virtual en AWS
-      run: ssh -i coraima.pem prueba2@18.220.141.63
+    - name: Configurar llave privada
+      run: echo "${{ secrets.CORAIMA_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+
+    - name: Conectar y ejecutar comando en la Máquina Virtual
+      run: ssh -i ~/.ssh/id_rsa prueba2@18.220.141.63
