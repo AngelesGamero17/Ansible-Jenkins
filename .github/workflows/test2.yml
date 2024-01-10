@@ -3,21 +3,15 @@ name: Ejecutar Máquina Virtual en AWS
 on: [push]
 
 jobs:
-  env:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Install SSH client
-      run: sudo apt-get install -y openssh-client
+    - name: Configurar llave privada
+      run: echo "${{ secrets.CORAIMA_KEY }}" 
 
-    - name: Set up SSH
-      run: |
-        echo "${{ secrets.CORAIMA.KEY }}" > ~/.ssh/id_prsa
-        chmod 600 ~/.ssh/id_prsa
-        ssh-keyscan -t rsa 18.220.141.63 >> ~/.ssh/known_hosts
-
-    - name: Connect to AWS Instance
-      run: ssh -i ~/.ssh/id_prsa prueba2@18.220.141.63 "your-commands-here"
+    - name: Conectar y ejecutar comando en la Máquina Virtual
+      run: ssh -i "${{ secrets.CORAIMA_KEY }}" ubuntu@18.220.141.63 "ls -l"
