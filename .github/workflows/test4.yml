@@ -1,5 +1,4 @@
-name: Ejecutar Máquina Virtual en AWS
-
+name: Ejecutar test
 on: [push]
 
 jobs:
@@ -10,7 +9,7 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Checkout Eddy444
+    - name: Checkout angeles
       uses: actions/checkout@v4
 
 

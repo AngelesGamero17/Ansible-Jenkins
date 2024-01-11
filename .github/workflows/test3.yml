@@ -1,0 +1,16 @@
+name: build and test 
+on: 
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  build-fealure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: imprimir
+        run: |
+          echo "ejecutar esto repository"
+
+
