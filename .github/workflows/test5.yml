@@ -8,11 +8,12 @@ jobs:
   build-fealure:
     runs-on: ubuntu-latest
     steps:
-    
+
       - uses: actions/checkout@v4
         with:
           ref:${{ github.event.pull_request.head.sha }}
       - name: imprimir
+        if: ${{ success() }} #Devuelve true cuando todos los pasos anteriores se han realizado correctamente.
         run: |
           echo "ejecutar angeles"
 
