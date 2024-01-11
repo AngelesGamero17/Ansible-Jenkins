@@ -5,11 +5,11 @@ on:
       - fealure/*
 
 jobs:
-  build-feature:
+  build-fealure:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: pull and Checking aut from git repository
+      - name: imprimir
         run: |
           echo "ejecutar esto repository"
 
