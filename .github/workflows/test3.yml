@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: pull and Checking aut from git repository
         run: |
-          echo "pulling and checking out from git repository"
+          echo "ejecutar esto repository"
 
 
