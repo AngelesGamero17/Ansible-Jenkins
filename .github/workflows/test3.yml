@@ -5,7 +5,7 @@ on:
       - fealure/*
 
 jobs:
-  build-fealure:
+  build-feature:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

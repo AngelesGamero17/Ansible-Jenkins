@@ -1,5 +1,4 @@
-name: Ejecutar Máquina Virtual en AWS
-
+name: Ejecutar test
 on: [push]
 
 jobs:
