@@ -1,20 +1,16 @@
-name: buil test de fecture/prueba2
-on:
-  pull_request:
-    branches: [ feature/prueba2]
-    types: [ opened, reopened]
+name: build and test 
+on: 
+    pull_request:
+      branches: [ feature/prueba2]
+      types: [ opened, reopened]
 
 jobs:
   build-fealure:
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v4
-        with:
-          ref:${{ github.event.pull_request.head.sha }}
       - name: imprimir
-        if: ${{ success() }} #Devuelve true cuando todos los pasos anteriores se han realizado correctamente.
         run: |
-          echo "ejecutar an"
+          echo "ejecutar esto repository"
 
 
