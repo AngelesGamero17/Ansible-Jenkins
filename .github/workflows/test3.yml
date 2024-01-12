@@ -1,16 +1,20 @@
-name: build and test 
-on: 
-    pull_request:
-      branches: [ feature/prueba2]
-      types: [ opened, reopened]
+name: build and test
+
+on:
+  pull_request:
+    branches:
+      - feature/prueba2
+    types:
+      - opened
+      - reopened
 
 jobs:
-  build-fealure:
+  build-failure:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: imprimir
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Imprimir
         run: |
-          echo "ejecutar esto repository"
-
-
+          echo "Ejecutar esto en el repositorio"
